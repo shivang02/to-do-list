@@ -11,7 +11,7 @@ class List extends React.Component {
                     <input type="checkbox" />
                 </div>
                 <div>
-                    <p>{this.props.value}</p>
+                    {this.props.value}
                 </div>
             </div>
         );
