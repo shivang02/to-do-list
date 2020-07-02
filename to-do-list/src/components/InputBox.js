@@ -14,8 +14,10 @@ class InputBox extends React.Component {
     
     ClickHandler = () => {
         const str=document.getElementById("input-box").value;
-        this.setState({ItemVal:this.state.ItemVal.concat(str)});
-        document.getElementById("input-box").value="";
+        if(str!=''){
+            this.setState({ItemVal:this.state.ItemVal.concat(str)});
+            document.getElementById("input-box").value="";
+        }
     };
 
     EnterCheck = (e)=>{
@@ -28,7 +30,7 @@ class InputBox extends React.Component {
         
         const listItems = this.state.ItemVal.map((listVal,index) =>{
             return (
-                <List value={listVal} />
+                <List value={listVal} listId={`elem${index}`} checkId={`box${index}`}/>
             );
         })
         return (
