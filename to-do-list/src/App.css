@@ -70,7 +70,8 @@
 
 }
 .input-container {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   box-sizing: border-box;
   
 }
