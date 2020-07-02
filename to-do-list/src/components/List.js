@@ -16,9 +16,6 @@ class List extends React.Component {
             checkMe.checked = false;
             strikeMe.classList.remove("strike");
         }
-        
-
-
     }
 
     render() {
