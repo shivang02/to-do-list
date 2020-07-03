@@ -20,6 +20,11 @@ class InputBox extends React.Component {
         }
     };
 
+    ClearList = () => {
+        this.setState({ ItemVal:[] });
+        document.getElementById("input-box").value = "";
+    }
+
     EnterCheck = (e)=>{
         if(e.key== 'Enter'){
             this.ClickHandler();
@@ -37,7 +42,8 @@ class InputBox extends React.Component {
             <div>
             <div className="input-container">
             <input className="list-input" placeholder="Enter List Item" id="input-box" onKeyDown={this.EnterCheck}></input>
-                <button type="submit" id="submit-button" className="list-submit-button" onClick={() =>this.ClickHandler()}>Add Note</button>
+                <button type="submit" id="submit-button" className="list-button" onClick={() =>this.ClickHandler()}>Add Note</button>
+                    <button type="submit" id="clear-button" className="list-button" onClick={() => this.ClearList()}>Clear List</button>
             </div>
             <div className="full-list">
                 {listItems}
