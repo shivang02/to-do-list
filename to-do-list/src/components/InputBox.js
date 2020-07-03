@@ -5,12 +5,11 @@ class InputBox extends React.Component {
     constructor(props){
         super(props);
         this.state ={
-            ItemVal : []
+            ItemVal : [],
+            ListTitle: ''
         }
-        this.ClickHandler = this.ClickHandler.bind(this);
-        this.EnterCheck=this.EnterCheck.bind(this);
+        
     }
-    
     
     ClickHandler = () => {
         const str=document.getElementById("input-box").value;
@@ -18,11 +17,22 @@ class InputBox extends React.Component {
             this.setState({ItemVal:this.state.ItemVal.concat(str)});
             document.getElementById("input-box").value="";
         }
-    };
+    }
+
+    handleListTitle = (e) => {
+        const lsname = e.target.value
+        this.setState( {
+            ListTitle: lsname
+        })
+    }
 
     ClearList = () => {
-        this.setState({ ItemVal:[] });
-        document.getElementById("input-box").value = "";
+        if(this.state.ItemVal!=''){
+            localStorage.setItem('mylist', this.state.ItemVal);
+            this.setState({ ItemVal:[] });
+            document.getElementById("input-box").value = "";
+            
+        }
     }
 
     EnterCheck = (e)=>{
@@ -41,9 +51,10 @@ class InputBox extends React.Component {
         return (
             <div>
             <div className="input-container">
-            <input className="list-input" placeholder="Enter List Item" id="input-box" onKeyDown={this.EnterCheck}></input>
+                <input className="list-input" placeholder="Enter List Item" id="input-box" onKeyDown={this.EnterCheck} autoFocus="true"></input>
                 <button type="submit" id="submit-button" className="list-button" onClick={() =>this.ClickHandler()}>Add Note</button>
-                    <button type="submit" id="clear-button" className="list-button" onClick={() => this.ClearList()}>Clear List</button>
+                <button type="submit" id="clear-button" className="list-button" onClick={() => this.ClearList()}>Clear List</button>
+                <input className="list-input" placeholder="Enter List Title" id="list-title-box" value={this.state.ListTitle} onChange={this.handleListTitle}></input>
             </div>
             <div className="full-list">
                 {listItems}

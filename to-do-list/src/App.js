@@ -1,15 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header'
-
 import InputBox from './components/InputBox'
-import ClickHandler from './components/InputBox'
-import ItemVal from './components/InputBox'
+import SavedList from './components/SavedList';
 
 function App() {
   return (
     <div className="App">
+    <div className="sidebar">
+      <SavedList />
+    </div>
     <div className="inner-app">
       <Header />
       <InputBox />

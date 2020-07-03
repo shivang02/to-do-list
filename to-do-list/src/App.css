@@ -21,7 +21,7 @@
   min-width: 230px;
   box-shadow:0px 2px 5px #000000;
   padding: auto;
-  border-radius: 20px;
+  border-radius: 0px 20px 20px 0px;
   min-height: 300px;
 }
 
@@ -53,9 +53,13 @@
   background-color: #042e38;
   color: floralwhite;
 }
+.header-main h1 {
+  margin-bottom: auto;
+}
 
 .list-button {
   background-color: #042e38;
+  font-size: px;
   padding: 3px 0 3px 3px;
   color: floralwhite;
   border:none;
@@ -72,18 +76,34 @@
 }
 
 .list-input {
-  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  
+  border: 0.1px dashed white;  
+  color:white;
+  outline: none;
   cursor: text;
+  margin: 10px 0 10px 0;
+  font-size: 18px;
+  outline: none;
   padding: 3px 0 3px 3px;
   line-height: 20px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 
+.list-input::placeholder {
+  color: rgba(255, 255, 255, 0.377);
+  text-align: center;
 }
 
 .list-input:hover {
-  box-shadow: 1px 1px 3px rgb(0, 68, 46) inset;
+  border: 0.1px solid white;  
   transition: all 0.2s ease-out;
 }
+
+#list-title-box {
+  text-align: center;
+}
+
 
 .input-container {
   display: flex;
