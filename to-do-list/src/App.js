@@ -7,9 +7,9 @@ import SavedList from './components/SavedList';
 function App() {
   return (
     <div className="App">
-    <div className="sidebar">
-      <SavedList />
-    </div>
+        <div className="sidebar">
+          <SavedList />
+        </div>
     <div className="inner-app">
       <Header />
       <InputBox />

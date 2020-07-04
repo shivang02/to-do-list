@@ -28,10 +28,9 @@ class InputBox extends React.Component {
 
     ClearList = () => {
         if(this.state.ItemVal!=''){
-            localStorage.setItem('mylist', this.state.ItemVal);
-            this.setState({ ItemVal:[] });
+            localStorage.setItem(this.state.ListTitle, this.state.ItemVal);
+            this.setState({ ItemVal:[],ListTitle:'' });
             document.getElementById("input-box").value = "";
-            
         }
     }
 
@@ -41,6 +40,8 @@ class InputBox extends React.Component {
         }    
     }
     
+
+
     render() {
         
         const listItems = this.state.ItemVal.map((listVal,index) =>{
@@ -51,7 +52,7 @@ class InputBox extends React.Component {
         return (
             <div>
             <div className="input-container">
-                <input className="list-input" placeholder="Enter List Item" id="input-box" onKeyDown={this.EnterCheck} autoFocus="true"></input>
+                <input className="list-input" placeholder="Enter List Item" id="input-box" onKeyDown={this.EnterCheck} autoFocus={true}></input>
                 <button type="submit" id="submit-button" className="list-button" onClick={() =>this.ClickHandler()}>Add Note</button>
                 <button type="submit" id="clear-button" className="list-button" onClick={() => this.ClearList()}>Clear List</button>
                 <input className="list-input" placeholder="Enter List Title" id="list-title-box" value={this.state.ListTitle} onChange={this.handleListTitle}></input>
