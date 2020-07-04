@@ -12,13 +12,20 @@
   background-attachment: fixed;
 }
 
-.sidebar {
-  display: inline;
+.holder {
+  display: flex;
+  height: max-content;
+}
 
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  height: 100%;
 }
 
 .saved-list {
-  background-color:#05386B;
+  background-color:#074888;
   min-width: 100px;
   width: auto;
   word-wrap: break-word;
@@ -29,12 +36,17 @@
   color: #fff;
   padding:10px;
   border-radius: 100px 0 0 100px;
+  cursor: pointer;
+}
+
+.saved-list:hover{
+  background-color:#042e38;
+  transition: all 0.2s ease-out;
 }
 
 .inner-app {
   
   background-color:#05386B;
-  
   vertical-align: middle;
   text-align: center;
   width: fit-content;
@@ -43,6 +55,7 @@
   padding: auto;
   border-radius: 0px 20px 20px 0px;
   min-height: 300px;
+
 }
 
 .list-item {

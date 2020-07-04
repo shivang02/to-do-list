@@ -7,13 +7,15 @@ import SavedList from './components/SavedList';
 function App() {
   return (
     <div className="App">
+      <div className="holder">
         <div className="sidebar">
           <SavedList />
         </div>
-    <div className="inner-app">
-      <Header />
-      <InputBox />
-    </div>
+        <div className="inner-app">
+          <Header />
+          <InputBox />
+        </div>
+      </div>
     </div>
   );
 }
